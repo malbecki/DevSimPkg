@@ -21,25 +21,25 @@ when in your EDK2 repo.
 
 ### Using the code
 
-You can refer to UnitTest modules to see the usage details. In general you will need to link to package libraries (instead of the ones normally provided by MdePkg/MdeModulePkg) and initialize your device mock. Details of initialization will vary based on which REGISTER_SPACE_MOCK implementer library you will
+You can refer to UnitTest modules to see the usage details. In general you will need to link to package libraries (instead of the ones normally provided by MdePkg/MdeModulePkg) and initialize your device access. Details of initialization will vary based on which REGISTER_ACCESS_INTERFACE implementer library you will
 choose. Please refer to corresponding libraries Readmes for details.
 
 ## General architecture
 
 On high-level package consists of:
 
-* REGISTER_SPACE_MOCK - interface between device model and driver code
-* REGISTER_SPACE_MOCK wrappers - libraries that wrap REGISTER_SPACE_MOCK and present it as a standard UEFI library
-* REGISTER_SPACE_MOCK implementers - libraries that implement REGISTER_SPACE_MOCK interface
+* REGISTER_ACCESS_INTERFACE - interface between device model and driver code
+* REGISTER_ACCESS_INTERFACE wrappers - libraries that wrap REGISTER_ACCESS_INTERFACE and present it as a standard UEFI library
+* REGISTER_ACCESS_INTERFACE implementers - libraries that implement REGISTER_ACCESS_INTERFACE interface
 
 ## Wrapper libraries
 
 Currently package implements following wrappers:
 
-* IoLib in MockIoLib
-* PciSegmentLib in MockPciSegmentLib
-* PCI_IO_PROTOCOL in MockPciIoLib
+* IoLib in RegisterAccessIoLib
+* PciSegmentLib in RegisterAccessPciSegmentLib
+* PCI_IO_PROTOCOL in RegisterAccessPciIoLib
 
-## REGISTER_SPACE_MOCK implementations
+## REGISTER_ACCESS_INTERFACE implementations
 
-Currently only a single implementation is fully supported - LocalRegisterSpaceMockLib. Please see its Readme for more details on how to use it.
+Currently only a single implementation is fully supported - FakeRegisterSpaceLib. Please see its Readme for more details on how to use it.
