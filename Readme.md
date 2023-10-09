@@ -36,10 +36,14 @@ On high-level package consists of:
 
 Currently package implements following wrappers:
 
-* IoLib in RegisterAccessIoLib
+* IoLib in [RegisterAccessIoLib](/Library/RegisterAccessIoLib/Readme.md)
 * PciSegmentLib in RegisterAccessPciSegmentLib
 * PCI_IO_PROTOCOL in RegisterAccessPciIoLib
 
 ## REGISTER_ACCESS_INTERFACE implementations
 
 Currently only a single implementation is fully supported - FakeRegisterSpaceLib. Please see its Readme for more details on how to use it.
+
+## GMOCK support
+
+DeviceSim implements Gmock based mock object for the IoLib functions. Please see GmockIoLib [Readme](/Library/MockIoLib//Readme.md) for details.
